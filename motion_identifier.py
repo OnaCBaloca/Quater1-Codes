@@ -1,19 +1,20 @@
 # Motion Type Identifier Template
+
  
 
 # Function 1: Convert velocity to m/s
 
-def convert_velocity(value, unit):
+def convert_velocity(value,unit):
     if unit == "m/s":
-        return value
+        return value    
     elif unit == "ft/s":
-        return value * 0.3048
+        return value * 0.3048       
     elif unit == "km/s":
         return value * 1000 
     elif unit == "mi/s":
         return value * 1609.34
     else:
-        raise ValueError("Unsupported velocity unit")
+        raise ValueError("Unsupported unit for velocity")   
 
     """
 
@@ -31,17 +32,17 @@ def convert_velocity(value, unit):
 
 # Function 2: Convert acceleration to m/s²
 
-def convert_acceleration(value, unit):
+def convert_acceleration(value,unit):
     if unit == "m/s²":
-        return value
+        return value    
     elif unit == "ft/s²":
-        return value * 0.3048
+        return value * 0.3048       
     elif unit == "km/s²":
         return value * 1000 
     elif unit == "mi/s²":
         return value * 1609.34
     else:
-        raise ValueError("Unsupported acceleration unit")
+        raise ValueError("Unsupported unit for acceleration")
 
     """
 
@@ -59,17 +60,17 @@ def convert_acceleration(value, unit):
 
 # Function 3: Determine motion type
 
-def motion_type(v, a): 
+def motion_type(v,a):
     if v > 0 and a == 0:
-        return "Uniform Motion"
-    elif v > 0 and a > 0:   
-        return "Accelerated Motion" 
+        return "Uniform Motion"     
+    elif v > 0 and a > 0:
+        return "Accelerated Motion"
     elif v > 0 and a < 0:
-        return "Decelerated Motion"
+        return "Accelerated Motion"
     elif v == 0:
         return "At Rest"
     else:
-        return "Undefined Motion"
+        return ("Undefined Motion") 
 
     """
 
@@ -115,16 +116,14 @@ a_unit = input("Enter acceleration unit (m/s², ft/s², km/s², mi/s²): ")
 
 # Step 3: Convert to SI units
 
-v_si = convert_velocity(v_value, v_unit)    
+v_si = convert_velocity(v_value, v_unit) 
 
 a_si = convert_acceleration(a_value, a_unit)  
-
  
 
 # Step 4: Determine motion type
 
-motion = motion_type(v_si, a_si)              
-
+motion = motion_type(v_si, a_si)           
  
 
 # Step 5: Display results
@@ -137,4 +136,5 @@ print(f"Acceleration = {a_si:.3f} m/s²")
 
 print(f"Motion Type = {motion}")
 
-
+ 
+ 
